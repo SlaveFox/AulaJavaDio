@@ -14,8 +14,12 @@ class Carro {
         this.cor = cor;
         this.gastoMedioPorKM = gastoMedioPorKM;
     }
+    calcularGasto(distanciaEmKm, precoCombustivel) {
+        return distanciaEmKm * this.gastoMedioPorKM * precoCombustivel;
+    }
 }
 
 const opala = new Carro('Chevrolet', 'Preto', 1 / 4.32);
 
-console.log(opala);
+opala.calcularGasto(70, 4.91);
+console.log(opala.calcularGasto(70, 4.91).toFixed(2));
